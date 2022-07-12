@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkenkake_inc=self.webpackChunkenkake_inc||[]).push([[95],{580:function(e,n,t){t.r(n);var l=t(2034),u=t(6019),k=t(3431);n.default=function(){return(0,k.tZ)(l.Z,null,(0,k.tZ)("main",null,(0,k.tZ)(u.Z,{title:"enkake Services"}),(0,k.tZ)("h1",null,"Service"),(0,k.tZ)("p",null,"TBD")))}}}]);
-//# sourceMappingURL=component---src-pages-service-tsx-7c97fecea61166378380.js.map
