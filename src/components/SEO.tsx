@@ -8,7 +8,7 @@ interface Props {
   image?: string
 }
 
-export const SEO: FC<Props> = ({ title, description, image }) => {
+const SEO: FC<Props> = ({ title, description, image }) => {
   return <Helmet>
     <title>{title}</title>
     <meta name="title" content={title} />
@@ -17,3 +17,5 @@ export const SEO: FC<Props> = ({ title, description, image }) => {
     {image && <meta property="og:image" content={image} />}
   </Helmet>
 }
+
+export default SEO;

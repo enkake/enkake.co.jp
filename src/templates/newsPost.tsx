@@ -2,7 +2,8 @@ import React, { FC } from 'react'
 import { Link, graphql } from 'gatsby'
 import { renderRichText, RenderRichTextData } from 'gatsby-source-contentful/rich-text'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-import { SEO } from '../components/SEO'
+import SEO from '../components/SEO'
+import Layout from '../components/Layout'
 
 interface Props {
   data: Queries.NewsPostBySlugQuery
@@ -21,13 +22,17 @@ const NewsPostTemplate: FC<Props> = ({ data, errors }) => {
   }
   const plainBody = documentToPlainTextString(JSON.parse(post.body?.raw || '{}'))
 
-  return (<div>
-    <SEO title={post.title || ''} description={plainBody} image={post.ogImage?.publicUrl} />
-    <h1>{post.title}</h1>
-    <div>
-      {renderRichText(post.body as RenderRichTextData<any>)}
-    </div>
-  </div>
+  return (
+    <Layout>
+      <div>
+        <SEO title={post.title || ''} description={plainBody} image={post.ogImage?.publicUrl} />
+        <h1>{post.title}</h1>
+        <div>
+          {renderRichText(post.body as RenderRichTextData<any>)}
+        </div>
+        <p>Posted at {post.createdAt}</p>
+      </div>
+    </Layout>
   )
 }
 

@@ -11,9 +11,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
   // Define a template for blog post
   const newsPost = path.resolve("./src/templates/newsPost.tsx");
 
-  const result = await graphql<Queries.AllNewsPostsQuery>(
+  const result = await graphql<Queries.AllNewsPostsInNodeQuery>(
     `
-      query AllNewsPosts {
+      query AllNewsPostsInNode {
         allContentfulPost {
           nodes {
             slug

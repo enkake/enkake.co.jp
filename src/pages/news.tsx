@@ -1,7 +1,8 @@
 import { graphql, Link } from "gatsby"
 import * as React from "react"
 import { FC } from "react"
-import { SEO } from "../components/SEO"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 
 interface Props {
   data: Queries.TopNewsPostsQuery
@@ -15,17 +16,19 @@ const NewsPage: FC<Props> = ({ data, errors }) => {
   }
 
   return (
-    <main>
-      <SEO title="enkake News" />
-      <h1>News</h1>
-      <ul>
-        {data.newsPosts.nodes.map(post => (
-          <li key={post.slug}>
-            <Link to={`/news/${post.slug}`}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </main>
+    <Layout>
+      <main>
+        <SEO title="enkake News" />
+        <h1>News</h1>
+        <ul>
+          {data.newsPosts.nodes.map(post => (
+            <li key={post.slug}>
+              <Link to={`/news/${post.slug}`}>{post.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </main>
+    </Layout>
   )
 }
 
