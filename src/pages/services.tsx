@@ -10,7 +10,7 @@ const ServicesPage: FC = () => {
     <Layout>
       <main>
         <SEO title="enkake Services" />
-        <h1>Service</h1>
+        <h1>Services</h1>
         <p>TBD</p>
       </main>
     </Layout>
@@ -18,3 +18,11 @@ const ServicesPage: FC = () => {
 }
 
 export default ServicesPage
+
+export const pageQuery = graphql`
+  query ServicesPage {
+    siteBuildMetadata {
+      buildTime
+    }
+  }
+`

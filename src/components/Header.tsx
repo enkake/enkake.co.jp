@@ -27,7 +27,7 @@ const Header: FC = () => {
         <Link
           variant="button"
           color="text.primary"
-          to="/news"
+          to="/news/"
           sx={{ my: 1, mx: 1.5 }}
         >
           News
@@ -35,7 +35,7 @@ const Header: FC = () => {
         <Link
           variant="button"
           color="text.primary"
-          to="/service"
+          to="/services/"
           sx={{ my: 1, mx: 1.5 }}
         >
           Services
@@ -43,7 +43,7 @@ const Header: FC = () => {
         <Link
           variant="button"
           color="text.primary"
-          to="/about"
+          to="/about/"
           sx={{ my: 1, mx: 1.5 }}
         >
           About

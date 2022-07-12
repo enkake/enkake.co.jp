@@ -23,7 +23,7 @@ const NewsPage: FC<Props> = ({ data, errors }) => {
         <ul>
           {data.newsPosts.nodes.map(post => (
             <li key={post.slug}>
-              <Link to={`/news/${post.slug}`}>{post.title}</Link>
+              <Link to={`/news/${post.slug}/`}>{post.title}</Link>
             </li>
           ))}
         </ul>

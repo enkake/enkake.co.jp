@@ -25,11 +25,11 @@ const IndexPage: FC<Props> = ({ data, errors }) => {
           <ul>
             {data.newsPosts.nodes.map(post => (
               <li key={post.slug}>
-                <Link to={`/news/${post.slug}`}>{post.title}</Link>
+                <Link to={`/news/${post.slug}/`}>{post.title}</Link>
               </li>
             ))}
           </ul>
-          <p><Link to="/news">Read more</Link></p>
+          <p><Link to="/news/">Read more</Link></p>
         </section>
       </main>
     </Layout>
