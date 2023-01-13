@@ -3,6 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import * as React from "react";
 import { FC } from "react";
 import theme from "../theme";
+import Footer from "./Footer";
 import Header from "./Header";
 
 interface Props {
@@ -17,6 +18,7 @@ const Layout: FC<Props> = ({ children }) => {
       <Container disableGutters maxWidth="md" sx={{ pt: 8, pb: 6 }}>
         {children}
       </Container>
+      <Footer />
     </ThemeProvider>
   )
 }

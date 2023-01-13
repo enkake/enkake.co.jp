@@ -5,7 +5,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
 interface Props {
-  data: Queries.TopNewsPostsQuery
+  data: Queries.AllNewsPostsQuery
   errors?: Error[]
 }
 
@@ -36,12 +36,12 @@ export default NewsPage
 
 export const pageQuery = graphql`
   query AllNewsPosts {
-    newsPosts: allContentfulPost(limit: 9999, sort: {fields: [createdAt], order: DESC}) {
+    newsPosts: allContentfulPost(limit: 9999, sort: {createdAt: DESC}) {
       nodes {
         slug
         title
         createdAt
       }
-    }
   }
+}
 `

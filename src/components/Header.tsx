@@ -2,6 +2,7 @@ import { Toolbar, Typography, Button } from "@mui/material"
 import AppBar from "@mui/material/AppBar"
 import React from "react"
 import { FC } from "react"
+import Logo from "../graphics/Logo"
 import Link from "./Link"
 
 const Header: FC = () => {
@@ -13,7 +14,9 @@ const Header: FC = () => {
   >
     <Toolbar sx={{ flexWrap: 'wrap' }}>
       <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-        enkake
+        <Link to="/">
+          <Logo />
+        </Link>
       </Typography>
       <nav>
         <Link
@@ -24,22 +27,14 @@ const Header: FC = () => {
         >
           Home
         </Link>
-        <Link
-          variant="button"
-          color="text.primary"
-          to="/news/"
-          sx={{ my: 1, mx: 1.5 }}
-        >
-          News
-        </Link>
-        <Link
+        {/* <Link
           variant="button"
           color="text.primary"
           to="/services/"
           sx={{ my: 1, mx: 1.5 }}
         >
           Services
-        </Link>
+        </Link> */}
         <Link
           variant="button"
           color="text.primary"

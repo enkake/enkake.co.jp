@@ -3,9 +3,10 @@ import * as React from "react"
 import { FC } from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import Img from "gatsby-image"
 
 interface Props {
-  data: Queries.TopNewsPostsQuery
+  data: Queries.TopQuery
   errors?: Error[]
 }
 
@@ -17,9 +18,9 @@ const IndexPage: FC<Props> = ({ data, errors }) => {
 
   return (
     <Layout>
+      <SEO title="enkake" />
+      <Img fluid={data.eyeCatchImage!.childImageSharp!.fluid!} />
       <main>
-        <SEO title="enkake" />
-        <h1>enkake</h1>
         <section>
           <h2>News</h2>
           <ul>
@@ -39,12 +40,19 @@ const IndexPage: FC<Props> = ({ data, errors }) => {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query TopNewsPosts {
-    newsPosts: allContentfulPost(limit: 2, sort: {fields: [createdAt], order: DESC}) {
+  query Top {
+    newsPosts: allContentfulPost(limit: 2, sort:{createdAt:DESC}) {
       nodes {
         slug
         title
         createdAt
+      }
+    }
+    eyeCatchImage: file(relativePath:{eq:"main.jpg"}) {
+      childImageSharp{
+        fluid(maxWidth: 1200) {
+          ... GatsbyImageSharpFluid_noBase64
+        }
       }
     }
   }
