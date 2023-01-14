@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkenkake_inc=self.webpackChunkenkake_inc||[]).push([[114],{8596:function(e,n,t){t.r(n);var l=t(1883),s=t(276),u=t(1470),a=t(917);n.default=e=>{let{data:n,errors:t}=e;if(null!=t&&t.length)throw new Error(t[0].message);return(0,a.tZ)(s.Z,null,(0,a.tZ)("main",null,(0,a.tZ)(u.Z,{title:"enkake News"}),(0,a.tZ)("h1",null,"News"),(0,a.tZ)("ul",null,n.newsPosts.nodes.map((e=>(0,a.tZ)("li",{key:e.slug},(0,a.tZ)(l.Link,{to:"/news/"+e.slug+"/"},e.title)))))))}}}]);
+//# sourceMappingURL=component---src-pages-news-tsx-dd0254cbf9310cac9009.js.map
