@@ -129,10 +129,7 @@ const AboutPage: FC<Props> = ({ data, errors }) => {
             <Typography variant="body1" component="p" sx={{ mb: 1 }}>取締役 CTO</Typography>
             <Typography variant="h5" component="h3" sx={{ mb: 4 }}>長瀨 敦史 (ながせ あつし)</Typography>
             <Typography variant="body2" component="p" sx={{ mb: 4 }}>
-              フォトグラファー<br />
-              インスタンスゼロ株式会社 プロジェクトマネージャー兼出資メンバー<br />
-              温泉ソムリエ<br />
-              サウナスパ・プロフェッショナル
+              インスタンスゼロ株式会社 共同創業者・ソフトウェア開発者・代表取締役
             </Typography>
             <Typography variant="body1" component="p" sx={{ mb: 4 }}>
               ソフトウェア開発者。モバイル・デスクトップ・Web アプリケーションなど、多岐にわたるソフトウェアビジネスの構築やオープンソースソフトウェ ア開発を経験。Modelmap, CAMPFIRE, Oneteam, Kaizen Platform, AppSocially などのスタートアップで、創業期から Web やネイティブアプ リケーション、SDK などの設計・開発、開発チームの牽引を行う。2018年インスタンスゼロ株式会社を創業。大手企業のサービス構築・開発者 育成、運用支援などを行う。
