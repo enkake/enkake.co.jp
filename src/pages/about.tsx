@@ -214,7 +214,7 @@ const AboutPage: FC<Props> = ({ data, errors }) => {
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSfQ08C7V8gRcZLOmoxjL57umyFnWKnYfbckbtQfSbNyC-FLbA/viewform?embedded=true"
           width="100%"
-          height="800"
+          height="920"
           style={{ border: 0 }}
         >Loading…</iframe>
       </main>
