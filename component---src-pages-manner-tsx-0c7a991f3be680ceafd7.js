@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkenkake_inc=self.webpackChunkenkake_inc||[]).push([[161],{8553:function(n,e,l){l.r(e);var t=l(276),k=l(1470),u=l(917);e.default=()=>(0,u.tZ)(t.Z,null,(0,u.tZ)("main",null,(0,u.tZ)(k.Z,{title:"enkake 温泉マナー 10ヶ条"}),(0,u.tZ)("h1",null,"温泉マナー 10ヶ条"),(0,u.tZ)("p",null,"準備中")))}}]);
+//# sourceMappingURL=component---src-pages-manner-tsx-0c7a991f3be680ceafd7.js.map
