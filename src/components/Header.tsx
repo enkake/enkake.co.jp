@@ -27,6 +27,14 @@ const Header: FC = () => {
         >
           Home
         </Link>
+        <Link
+          variant="button"
+          color="text.primary"
+          to="/manner"
+          sx={{ my: 1, mx: 1.5 }}
+        >
+          温泉マナー10ヶ条
+        </Link>
         {/* <Link
           variant="button"
           color="text.primary"
