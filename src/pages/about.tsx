@@ -89,7 +89,7 @@ const AboutPage: FC<Props> = ({ data, errors }) => {
             <Img fluid={data.tatsu!.childImageSharp!.fluid!} />
           </Grid>
           <Grid item xs={12} md={8}>
-            <Typography variant="body1" component="p" sx={{ mb: 1 }}>取締役 エバンジェリスト</Typography>
+            <Typography variant="body1" component="p" sx={{ mb: 1 }}>共同創業者　温泉プロデューサー</Typography>
             <Typography variant="h5" component="h3" sx={{ mb: 4 }}>井出 辰之助 (いで たつのすけ)</Typography>
             <Typography variant="body2" component="p" sx={{ mb: 4 }}>
               (株) infusiondesign 代表/イベントプロデューサー
