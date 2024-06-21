@@ -37,6 +37,12 @@ const config: GatsbyConfig = {
         icon: "src/images/icon.png",
       },
     },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-PLRS35PR",
+      },
+    },
   ],
 };
 
