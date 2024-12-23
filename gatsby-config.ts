@@ -18,7 +18,15 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-emotion",
-    "gatsby-plugin-google-gtag",
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: [process.env.GA_TRACKING_ID],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",

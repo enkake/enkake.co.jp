@@ -6,24 +6,28 @@ on:
   pull_request:
     branches:
       - master
+
 jobs:
-  deploy:
+  build:
+    runs-on: ubuntu-22.04
+
     env:
       CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
       CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-    runs-on: ubuntu-20.04
+      GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 22.x
 
-      - run: yarn
-      - run: yarn build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - run: npm install
+      - run: npm run build
+        id: build
+      - run: echo enkake.co.jp > public/CNAME
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          cname: enkake.co.jp
+          path: public
