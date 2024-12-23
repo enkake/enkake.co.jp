@@ -1,59 +1,44 @@
-import { graphql, Link } from "gatsby"
-import * as React from "react"
-import { FC } from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Img from "gatsby-image"
+import { graphql, type HeadFC, type PageProps } from 'gatsby';
+import type { FC } from 'react';
+import React from 'react';
+import { SEO } from '../components/SEO';
+import IndexPage from '../components/pages/IndexPage';
 
-interface Props {
-  data: Queries.TopQuery
-  errors?: Error[]
+interface Props extends PageProps {
+  data: Queries.TopQuery;
 }
 
+const Page: FC<Props> = ({ data }) => <IndexPage data={data} />;
 
-const IndexPage: FC<Props> = ({ data, errors }) => {
-  if (errors?.length) {
-    throw new Error(errors[0].message);
-  }
+export default Page;
 
-  return (
-    <Layout>
-      <SEO title="enkake" />
-      <Img fluid={data.eyeCatchImage!.childImageSharp!.fluid!} />
-      <main>
-        <section>
-          <h2>News</h2>
-          <ul>
-            {data.newsPosts.nodes.map(post => (
-              <li key={post.slug}>
-                <Link to={`/news/${post.slug}/`}>{post.title}</Link>
-              </li>
-            ))}
-          </ul>
-          <p><Link to="/news/">Read more</Link></p>
-        </section>
-      </main>
-    </Layout>
-  )
-}
-
-export default IndexPage
+export const Head: HeadFC = () => <SEO />;
 
 export const pageQuery = graphql`
   query Top {
-    newsPosts: allContentfulPost(limit: 2, sort:{createdAt:DESC}) {
+    newsPosts: allContentfulPost(limit: 5, sort: { createdAt: DESC }) {
       nodes {
         slug
         title
         createdAt
       }
     }
-    eyeCatchImage: file(relativePath:{eq:"main.jpg"}) {
-      childImageSharp{
-        fluid(maxWidth: 1200) {
-          ... GatsbyImageSharpFluid_noBase64
+    members: allContentfulMember(sort: { order: ASC }) {
+      nodes {
+        id
+        name
+        nameEn
+        jobTitle
+        picture {
+          gatsbyImageData(width: 1000)
         }
+        otherJobs
+        bio {
+          bio
+        }
+        favoriteSpring
+        favoriteOnsenArea
       }
     }
   }
-`
+`;
