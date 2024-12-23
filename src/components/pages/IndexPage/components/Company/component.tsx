@@ -1,4 +1,4 @@
-import { Typography, Box, Table, TableBody, TableRow, TableCell, styled } from '@mui/material';
+import { Typography, Box, Table, TableBody, TableRow, TableCell, styled, Toolbar } from '@mui/material';
 import type { FC } from 'react';
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -22,58 +22,61 @@ const businesses = [
 
 export const Component: FC = () => {
   return (
-    <Wrapper id={'company'} sx={{ pt: 4, gap: 4 }}>
-      <SectionHeading>
-        <Typography variant={'subtitle1'}>会社概要</Typography>
-        <Typography variant={'h2'}>Company</Typography>
-      </SectionHeading>
-      <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'row' }}>
-        <Box>
-          <StaticImage
-            src={'../../../../../images/company.jpg'}
-            alt={'浴室'}
-            width={300}
-            transformOptions={{
-              fit: 'cover',
-            }}
-          />
-        </Box>
-        <Box>
-          <Table>
-            <TableBody>
-              {tableData.map((data) => (
-                <TableRow key={data[0]}>
+    <div id={'company'}>
+      <Toolbar />
+      <Wrapper sx={{ pt: 4, gap: 4 }}>
+        <SectionHeading>
+          <Typography variant={'subtitle1'}>会社概要</Typography>
+          <Typography variant={'h2'}>Company</Typography>
+        </SectionHeading>
+        <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'row' }}>
+          <Box>
+            <StaticImage
+              src={'../../../../../images/company.jpg'}
+              alt={'浴室'}
+              width={300}
+              transformOptions={{
+                fit: 'cover',
+              }}
+            />
+          </Box>
+          <Box>
+            <Table>
+              <TableBody>
+                {tableData.map((data) => (
+                  <TableRow key={data[0]}>
+                    <TableCell component={'th'}>
+                      <Typography variant={'body2'}>
+                        {data[0]}
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Typography variant={'body2'}>{data[1]}</Typography>
+                    </TableCell>
+                  </TableRow>
+                ))}
+                <TableRow>
                   <TableCell component={'th'}>
                     <Typography variant={'body2'}>
-                      {data[0]}
+                      事業内容
                     </Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography variant={'body2'}>{data[1]}</Typography>
+                    <Typography variant={'body2'}>
+                      <ol>
+                        {businesses.map((business) => (
+                          <li key={business}>{business}</li>
+                        ))}
+                      </ol>
+                    </Typography>
                   </TableCell>
                 </TableRow>
-              ))}
-              <TableRow>
-                <TableCell component={'th'}>
-                  <Typography variant={'body2'}>
-                    事業内容
-                  </Typography>
-                </TableCell>
-                <TableCell>
-                  <Typography variant={'body2'}>
-                    <ol>
-                      {businesses.map((business) => (
-                        <li key={business}>{business}</li>
-                      ))}
-                    </ol>
-                  </Typography>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
+              </TableBody>
+            </Table>
+          </Box>
         </Box>
-      </Box>
-    </Wrapper>
+      </Wrapper>
+    </div>
   );
 };
 

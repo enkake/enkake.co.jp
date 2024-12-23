@@ -1,4 +1,4 @@
-import { Box, styled, Typography } from '@mui/material';
+import { Box, styled, Toolbar, Typography } from '@mui/material';
 import type { FC } from 'react';
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -6,43 +6,46 @@ import { SectionHeading } from '../../../../SectionHeading';
 
 export const Component: FC = () => {
   return (
-    <Wrapper id={'home'} sx={{ pt: 4 }}>
-      <SectionHeading>
-        <Typography variant={'subtitle1'} className={'montserrat'}>
-          Connecting Japan&apos;s <q>ONSEN</q> culture to the future.
-        </Typography>
-        <Typography variant={'subtitle1'}>enkake が目指すもの</Typography>
-        <Typography variant={'h2'}>Vision</Typography>
-      </SectionHeading>
-      <Box sx={{ flexGrow: 1, position: 'relative', height: '440px', overflow: 'hidden' }}>
-        <Box sx={{ pr: 4 }}>
-          <StaticImage
-            src={'../../../../../images/bg-vision.jpg'}
-            alt={'浴室'}
-            transformOptions={{
-              fit: 'cover',
-            }}
-          />
+    <div id={'home'}>
+      <Toolbar />
+      <Wrapper sx={{ pt: 4 }}>
+        <SectionHeading>
+          <Typography variant={'subtitle1'} className={'montserrat'}>
+            Connecting Japan&apos;s <q>ONSEN</q> culture to the future.
+          </Typography>
+          <Typography variant={'subtitle1'}>enkake が目指すもの</Typography>
+          <Typography variant={'h2'}>Vision</Typography>
+        </SectionHeading>
+        <Box sx={{ flexGrow: 1, position: 'relative', height: '440px', overflow: 'hidden' }}>
+          <Box sx={{ pr: 4 }}>
+            <StaticImage
+              src={'../../../../../images/bg-vision.jpg'}
+              alt={'浴室'}
+              transformOptions={{
+                fit: 'cover',
+              }}
+            />
+          </Box>
+          <Box>
+            <Catchphrase variant={'h2'}>
+              <div className={'text'}>日本の温泉文化を、未来へつなぐ。</div>
+              <div className={'arrow'}>&nbsp;</div>
+            </Catchphrase>
+            <Tagline variant={'body2'}>
+              enkakeが目指すのは、
+              <br />
+              温泉を通じて人々が明るい未来を楽しむ世界。
+              <br />
+              その実現のため、
+              <br />
+              新しい温泉との出会いのきっかけを、
+              <br />
+              事業を通して多くの人々へ届けます。
+            </Tagline>
+          </Box>
         </Box>
-        <Box>
-          <Catchphrase variant={'h2'}>
-            <div className={'text'}>日本の温泉文化を、未来へつなぐ。</div>
-            <div className={'arrow'}>&nbsp;</div>
-          </Catchphrase>
-          <Tagline variant={'body2'}>
-            enkakeが目指すのは、
-            <br />
-            温泉を通じて人々が明るい未来を楽しむ世界。
-            <br />
-            その実現のため、
-            <br />
-            新しい温泉との出会いのきっかけを、
-            <br />
-            事業を通して多くの人々へ届けます。
-          </Tagline>
-        </Box>
-      </Box>
-    </Wrapper>
+      </Wrapper>
+    </div>
   );
 };
 

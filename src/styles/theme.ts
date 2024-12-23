@@ -18,6 +18,11 @@ const theme = createTheme({
     MuiAppBar: {
       defaultProps: {
         color: 'transparent',
+        sx: {
+          boxShadow: 'none',
+          backdropFilter: 'blur(5px)',
+          backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        },
         elevation: 0,
       },
     },
