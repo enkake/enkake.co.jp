@@ -3,6 +3,19 @@ on:
   repository_dispatch:
     types: [publish-event]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -31,9 +44,6 @@ jobs:
   deploy:
     runs-on: ubuntu-22.04
     needs: build
-    permissions:
-      pages: write
-      id-token: write
 
     environment:
       name: github-pages
