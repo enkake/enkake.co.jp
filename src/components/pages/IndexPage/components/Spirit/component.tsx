@@ -72,7 +72,6 @@ const Definitions = styled(Box)`
   dt {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 800;
-    font-weight: bold;
     width: 200px;
     height: 200px;
     border: 5px solid #E94709;
