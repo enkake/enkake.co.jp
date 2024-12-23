@@ -5,10 +5,10 @@ import { SEO } from '../components/SEO';
 import IndexPage from '../components/pages/IndexPage';
 
 interface Props extends PageProps {
-  data: Queries.TopQuery
+  data: Queries.TopQuery;
 }
 
-const Page: FC<Props> = ({ data }) => <IndexPage data={data} />
+const Page: FC<Props> = ({ data }) => <IndexPage data={data} />;
 
 export default Page;
 
@@ -16,7 +16,7 @@ export const Head: HeadFC = () => <SEO />;
 
 export const pageQuery = graphql`
   query Top {
-    newsPosts: allContentfulPost(limit: 5, sort:{createdAt:DESC}) {
+    newsPosts: allContentfulPost(limit: 5, sort: { createdAt: DESC }) {
       nodes {
         slug
         title
@@ -24,4 +24,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

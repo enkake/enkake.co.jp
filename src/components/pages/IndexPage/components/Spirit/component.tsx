@@ -1,27 +1,23 @@
-import { Box, Stack, styled, Typography } from "@mui/material";
-import type { FC } from "react";
-import React from "react";
-import { SectionHeading } from "../../../../SectionHeading";
+import { Box, Stack, styled, Typography } from '@mui/material';
+import type { FC } from 'react';
+import React from 'react';
+import { SectionHeading } from '../../../../SectionHeading';
 
 export const Component: FC = () => {
   return (
-    <Wrapper id={"spirit"} sx={{ pt: 4 }}>
+    <Wrapper id={'spirit'} sx={{ pt: 4 }}>
       <SectionHeading>
-        <Typography variant={'subtitle1'}>
-          スピリット
-        </Typography>
-        <Typography variant={"h2"}>
-          Spirit
-        </Typography>
+        <Typography variant={'subtitle1'}>スピリット</Typography>
+        <Typography variant={'h2'}>Spirit</Typography>
       </SectionHeading>
       <Stack spacing={2} sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-        <Typography variant={"body1"}>
+        <Typography variant={'body1'}>
           enkake はこの基本精神を大切に温泉と向き合っています。
         </Typography>
-        <Typography variant={"h3"} className={"noto-sans"} sx={{ fontWeight: 600 }}>
+        <Typography variant={'h3'} className={'noto-sans'} sx={{ fontWeight: 600 }}>
           もらい湯精神
         </Typography>
-        <Typography variant={"caption"}>
+        <Typography variant={'caption'}>
           ※「温泉に入らせてもらう」という気持ちを忘れない精神
         </Typography>
         <Definitions>
@@ -47,14 +43,14 @@ export const Component: FC = () => {
       </Stack>
     </Wrapper>
   );
-}
+};
 
 const Wrapper = styled(Box)`
   display: flex;
   flex-direction: row;
   margin-left: -26px;
   margin-bottom: 6rem;
-`
+`;
 
 const Definitions = styled(Box)`
   display: flex;
@@ -62,10 +58,12 @@ const Definitions = styled(Box)`
   justify-content: space-between;
   gap: 50px;
   width: 100%;
-  dl, dt, dd {
+  dl,
+  dt,
+  dd {
     margin: 0;
     padding: 0;
-    }
+  }
   dl {
     width: 100%;
   }
@@ -74,7 +72,7 @@ const Definitions = styled(Box)`
     font-weight: 800;
     width: 200px;
     height: 200px;
-    border: 5px solid #E94709;
+    border: 5px solid #e94709;
     border-radius: 100%;
     text-align: center;
     line-height: 200px;
@@ -86,4 +84,4 @@ const Definitions = styled(Box)`
     list-style: disc;
     display: list-item;
   }
-`
+`;

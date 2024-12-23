@@ -1,6 +1,6 @@
-import { Box, styled } from "@mui/material";
-import type { FC } from "react";
-import React from "react";
+import { Box, styled } from '@mui/material';
+import type { FC } from 'react';
+import React from 'react';
 
 interface Props {
   children: React.ReactNode;
@@ -9,19 +9,17 @@ interface Props {
 export const SectionHeading: FC<Props> = ({ children }) => {
   return (
     <Wrapper>
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </Wrapper>
   );
-}
+};
 
 const Wrapper = styled(Box)`
   position: relative;
   width: 100px;
   height: 500px;
   & > div {
-    transform: rotate(90deg) translate(0, -100px); 
+    transform: rotate(90deg) translate(0, -100px);
     transform-origin: top left;
     width: 500px;
     height: 100px;
@@ -32,4 +30,4 @@ const Wrapper = styled(Box)`
     text-transform: uppercase;
     font-size: 3rem;
   }
-`
+`;

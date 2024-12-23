@@ -1,10 +1,10 @@
-import type { FC } from "react";
-import React from "react";
-import Layout from "../../Layout";
-import { Company, Home, Members, News, Services, Spirit } from "./components";
+import type { FC } from 'react';
+import React from 'react';
+import Layout from '../../Layout';
+import { Company, Home, Members, News, Services, Spirit } from './components';
 
 interface Props {
-  data: Queries.TopQuery
+  data: Queries.TopQuery;
 }
 
 export const Component: FC<Props> = ({ data }) => {
@@ -18,4 +18,4 @@ export const Component: FC<Props> = ({ data }) => {
       <Company />
     </Layout>
   );
-}
+};
