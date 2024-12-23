@@ -23,5 +23,22 @@ export const pageQuery = graphql`
         createdAt
       }
     }
+    members: allContentfulMember(sort:{ order: ASC }) {
+    	nodes {
+        id
+        name
+        nameEn
+        jobTitle
+        picture {
+          gatsbyImageData(width: 1000)
+        }
+        otherJobs
+        bio {
+          bio
+        }
+        favoriteSpring
+        favoriteOnsenArea
+      }
+  	}
   }
 `;

@@ -148,12 +148,12 @@ const Definitions = styled(Box)`
       top: 50%;
       left: -50px;
     }
-    &:first-child:before {
+    &:first-of-type:before {
       transform: rotate(-45deg);
       top: 60%;
       left: -43px;
     }
-    &:last-child:before {
+    &:last-of-type:before {
       transform: rotate(45deg);
       top: 40%;
       left: -43px;
@@ -179,6 +179,7 @@ const Definitions = styled(Box)`
     }
   }
 `;
+
 const Businesses = styled(Box)`
   display: flex;
   gap: 1rem;

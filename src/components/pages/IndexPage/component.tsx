@@ -14,7 +14,7 @@ export const Component: FC<Props> = ({ data }) => {
       <Spirit />
       <Services />
       <News posts={data.newsPosts.nodes} />
-      <Members />
+      <Members members={data.members.nodes} />
       <Company />
     </Layout>
   );

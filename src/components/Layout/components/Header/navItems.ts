@@ -12,15 +12,15 @@ export const navItems = [
     anchor: 'services',
   },
   {
-    label: 'Company',
-    anchor: 'company',
+    label: 'News',
+    anchor: 'news',
   },
   {
     label: 'Members',
     anchor: 'members',
   },
   {
-    label: 'News',
-    anchor: 'news',
+    label: 'Company',
+    anchor: 'company',
   },
 ];

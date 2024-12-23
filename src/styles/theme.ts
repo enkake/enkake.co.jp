@@ -21,6 +21,14 @@ const theme = createTheme({
         elevation: 0,
       },
     },
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          backdropFilter: 'blur(5px)',
+          backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        },
+      },
+    },
   },
 });
 
