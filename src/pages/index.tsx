@@ -23,8 +23,8 @@ export const pageQuery = graphql`
         createdAt
       }
     }
-    members: allContentfulMember(sort:{ order: ASC }) {
-    	nodes {
+    members: allContentfulMember(sort: { order: ASC }) {
+      nodes {
         id
         name
         nameEn
@@ -39,6 +39,6 @@ export const pageQuery = graphql`
         favoriteSpring
         favoriteOnsenArea
       }
-  	}
+    }
   }
 `;

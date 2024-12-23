@@ -1,4 +1,13 @@
-import { Typography, Box, Table, TableBody, TableRow, TableCell, styled, Toolbar } from '@mui/material';
+import {
+  Typography,
+  Box,
+  Table,
+  TableBody,
+  TableRow,
+  TableCell,
+  styled,
+  Toolbar,
+} from '@mui/material';
 import type { FC } from 'react';
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -10,7 +19,7 @@ const tableData = [
   ['資本金', '500万円'],
   ['株主構成', '発起人で構成'],
   ['本社所在地', '〒153-0064 東京都目黒区下目黒２丁目１８−３ 目黒花谷ビル 303'],
-]
+];
 
 const businesses = [
   '温浴施設ならびに宿泊施設に関するデータベースの企画運営',
@@ -18,7 +27,7 @@ const businesses = [
   '温浴施設ならびに宿泊施設に関する企画運営',
   '温浴施設ならびに宿泊施設に関する経営コンサルティング',
   'その他付随する一切の業務',
-]
+];
 
 export const Component: FC = () => {
   return (
@@ -46,9 +55,7 @@ export const Component: FC = () => {
                 {tableData.map((data) => (
                   <TableRow key={data[0]}>
                     <TableCell component={'th'}>
-                      <Typography variant={'body2'}>
-                        {data[0]}
-                      </Typography>
+                      <Typography variant={'body2'}>{data[0]}</Typography>
                     </TableCell>
                     <TableCell>
                       <Typography variant={'body2'}>{data[1]}</Typography>
@@ -57,9 +64,7 @@ export const Component: FC = () => {
                 ))}
                 <TableRow>
                   <TableCell component={'th'}>
-                    <Typography variant={'body2'}>
-                      事業内容
-                    </Typography>
+                    <Typography variant={'body2'}>事業内容</Typography>
                   </TableCell>
                   <TableCell>
                     <Typography variant={'body2'}>
@@ -85,7 +90,8 @@ const Wrapper = styled(Box)`
   flex-direction: row;
   margin-left: -26px;
   margin-bottom: 6rem;
-  td, th {
+  td,
+  th {
     padding: 0.5rem;
     border-bottom: 0;
   }
@@ -101,9 +107,9 @@ const Wrapper = styled(Box)`
       display: inline-block;
     }
   }
-    td ol {
-      margin: 0;
-      padding-top: 0;
-      padding-left: 1.5rem;
-    }
+  td ol {
+    margin: 0;
+    padding-top: 0;
+    padding-left: 1.5rem;
+  }
 `;
