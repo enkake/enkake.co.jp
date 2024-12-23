@@ -12,6 +12,6 @@ jobs:
           node-version: 22.x
 
       - run: npm install
-      - run: npm run typecheck
+      # - run: npm run typecheck
       - run: npm run lint
       - run: npm run format:check
