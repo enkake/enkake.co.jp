@@ -8,7 +8,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { formatDate } from 'date-fns';
-import { Box } from '@mui/material';
+import { Box, Toolbar } from '@mui/material';
 import { SEO } from '../components/SEO';
 import Layout from '../components/Layout';
 
@@ -46,6 +46,7 @@ const NewsPostTemplate: FC<Props> = ({ data, errors }) => {
 
   return (
     <Layout>
+      <Toolbar />
       <Box sx={{ py: 4 }}>
         <SEO title={post.title || ''} description={plainBody} image={post.ogImage?.publicUrl} />
         <h1>{post.title}</h1>
