@@ -52,6 +52,7 @@ export const Component: FC = () => {
 const Wrapper = styled(Box)`
   display: flex;
   flex-direction: row-reverse;
+  margin-bottom: 6rem;
 `
 
 const Catchphrase = styled(Typography)`

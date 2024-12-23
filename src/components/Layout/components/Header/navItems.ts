@@ -8,6 +8,10 @@ export const navItems = [
     anchor: 'spirit',
   },
   {
+    label: 'Services',
+    anchor: 'services',
+  },
+  {
     label: 'Company',
     anchor: 'company',
   },
