@@ -10,7 +10,7 @@ interface Props {
 export const NavItem: FC<Props> = ({ label, anchor }) => {
   return (
     <Box key={label} sx={{ mx: 1 }}>
-      <Button LinkComponent={"a"} href={`#${anchor}`}>
+      <Button LinkComponent={"a"} href={`/#${anchor}`}>
         {label}
       </Button>
     </Box>
