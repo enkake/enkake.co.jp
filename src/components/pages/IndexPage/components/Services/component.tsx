@@ -6,6 +6,9 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import { SectionHeading } from "../../../../SectionHeading";
 import Yuumies from "../../../../graphics/Yuumies";
 import XIcon from "../../../../graphics/X";
+import ContentsFigure from "../../../../graphics/ContentsFigure";
+import PresentationFigure from "../../../../graphics/PresentationFigure";
+import DatabaseFigure from "../../../../graphics/DatabaseFigure";
 
 export const Component: FC = () => {
   return (
@@ -40,7 +43,7 @@ export const Component: FC = () => {
                   <span className={"en"}>Database</span>
                   <span className={"ja"}>温泉データベース</span>
                 </dt>
-                <dd>住所などの基本情報はもちろん、源泉や湯使い<sup>*</sup> に着目したユニークなデータベース</dd>
+                <dd>住所などの基本情報はもちろん、源泉や湯使い<sup>※</sup> に着目したユニークなデータベース</dd>
               </dl>
               <dl>
                 <dt>
@@ -72,6 +75,29 @@ export const Component: FC = () => {
             </Typography>
           </Box>
         </Paper>
+        <Businesses>
+          <Box>
+            <DatabaseFigure />
+            <Typography variant={"h6"} align={"center"}>温泉データベース事業</Typography>
+            <Typography variant={"body2"} align={"center"}>
+              「温泉がどこにあるかを知る」をテーマに、全国の温泉をスマホで手軽に探せる温泉データベースサービスを提供します。
+            </Typography>
+          </Box>
+          <Box>
+            <ContentsFigure />
+            <Typography variant={"h6"} align={"center"}>コンテンツ事業</Typography>
+            <Typography variant={"body2"} align={"center"}>
+              「温泉の楽しみ方を知る」をテーマに、伝統的な楽しみ方から革新的な楽しみまで、温泉を軸にした様々なコンテンツを企画提供します。
+            </Typography>
+          </Box>
+          <Box>
+            <PresentationFigure />
+            <Typography variant={"h6"} align={"center"}>プレゼンテーション事業</Typography>
+            <Typography variant={"body2"} align={"center"}>
+              「温泉の魅力を知る」をテーマに、温泉をより身近なものにするために、伝統や歴史にフォーカスした様々な情報を発信します。
+            </Typography>
+          </Box>
+        </Businesses>
       </Box>
     </Wrapper>
   );
@@ -80,6 +106,7 @@ export const Component: FC = () => {
 const Wrapper = styled(Box)`
   display: flex;
   flex-direction: row-reverse;
+  margin-bottom: 4rem;
 `
 const Definitions = styled(Box)`
   display: flex;
@@ -123,12 +150,38 @@ const Definitions = styled(Box)`
       font-weight: 800;
       font-size: 1.5rem;
       margin-right: 0.5rem;
+      text-transform: uppercase;
     }
     .ja {
       font-family: 'Noto Sans JP', sans-serif;
       font-weight: 800;
       font-size: 1.2rem;
       color: ${grey[600]}
+    }
+  }
+`
+const Businesses = styled(Box)`
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+  > div {
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid ${grey[300]};
+    svg  {
+      width: 50%;
+    }
+    h6 {
+      font-size: 1.2rem;
+      color: #e94709;
+    }
+    .MuiTypography-body2 {
+      padding: 0.8rem;
     }
   }
 `
