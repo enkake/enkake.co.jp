@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { type HeadFC, type PageProps } from 'gatsby';
 import { Toolbar, Typography, Box } from '@mui/material';
-import { SEO } from '../../components/SEO';
-import Layout from '../../components/Layout';
+import { SEO } from '../components/SEO';
+import Layout from '../components/Layout';
 
 const Page: React.FC<PageProps> = () => (
   <Layout>
