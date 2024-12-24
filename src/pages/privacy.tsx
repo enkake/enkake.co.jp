@@ -196,7 +196,7 @@ const Page: React.FC<PageProps> = () => (
           <tbody>
             <tr>
               <td>住所</td>
-              <td>〒100-0001 東京都千代田区丸の内一丁目</td>
+              <td>〒153-0064 東京都目黒区下目黒 2-18-3 目黒第一花谷ビル 303</td>
             </tr>
             <tr>
               <td>社名</td>
