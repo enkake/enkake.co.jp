@@ -33,10 +33,7 @@ export const Component: FC = () => {
                     {item.label}
                   </Button>
                 ) : (
-                  <Button
-                    component={Link}
-                    to={item.href}
-                    sx={{ color: 'white' }}>
+                  <Button component={Link} to={item.href} sx={{ color: 'white' }}>
                     {item.label}
                   </Button>
                 )}
