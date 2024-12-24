@@ -23,14 +23,23 @@ export const Component: FC = () => {
 
             return (
               <Box key={item.label} sx={{ mx: 1 }}>
-                <Button
-                  LinkComponent={isExternal ? 'a' : Link}
-                  href={item.href}
-                  sx={{ color: 'white' }}
-                  target={isExternal ? '_blank' : undefined}
-                >
-                  {item.label}
-                </Button>
+                {isExternal ? (
+                  <Button
+                    LinkComponent={'a'}
+                    href={item.href}
+                    sx={{ color: 'white' }}
+                    target={'_blank'}
+                  >
+                    {item.label}
+                  </Button>
+                ) : (
+                  <Button
+                    component={Link}
+                    to={item.href}
+                    sx={{ color: 'white' }}>
+                    {item.label}
+                  </Button>
+                )}
               </Box>
             );
           })}

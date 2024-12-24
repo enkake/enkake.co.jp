@@ -67,7 +67,7 @@ export const Component: FC = () => {
                     <Typography variant={'body2'}>事業内容</Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography variant={'body2'}>
+                    <Typography variant={'body2'} component={'div'}>
                       <ol>
                         {businesses.map((business) => (
                           <li key={business}>{business}</li>
