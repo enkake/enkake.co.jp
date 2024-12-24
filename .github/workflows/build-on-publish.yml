@@ -2,6 +2,8 @@ name: Eleventy Build on Contentful Publish Event
 on:
   repository_dispatch:
     types: [publish-event]
+  push:
+    branches: [master]
 
 permissions:
   contents: read

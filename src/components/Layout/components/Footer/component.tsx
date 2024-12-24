@@ -1,6 +1,7 @@
 import { Box, Button, Container } from '@mui/material';
 import type { FC } from 'react';
 import React from 'react';
+import { Link } from 'gatsby';
 import { navItems } from './navItems';
 
 export const Component: FC = () => {
@@ -17,13 +18,17 @@ export const Component: FC = () => {
     >
       <Container maxWidth={'md'} component={'footer'}>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          {navItems.map((item) => (
-            <Box key={item.label} sx={{ mx: 1 }}>
-              <Button LinkComponent={'a'} href={item.href} sx={{ color: 'white' }}>
-                {item.label}
-              </Button>
-            </Box>
-          ))}
+          {navItems.map((item) => {
+            const isExternal = item.href.startsWith('http');
+
+            return (
+              <Box key={item.label} sx={{ mx: 1 }}>
+                <Button LinkComponent={isExternal ? 'a' : Link} href={item.href} sx={{ color: 'white' }} target={isExternal ? '_blank' : undefined}>
+                  {item.label}
+                </Button>
+              </Box>
+            )
+          })}
         </Box>
         <Box sx={{ mt: 2 }}>&copy; {new Date().getFullYear()} enkake Inc.</Box>
       </Container>

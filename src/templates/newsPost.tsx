@@ -8,7 +8,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { formatDate } from 'date-fns';
-import { Box, Toolbar } from '@mui/material';
+import { Box, Toolbar, Typography } from '@mui/material';
 import { SEO } from '../components/SEO';
 import Layout from '../components/Layout';
 
@@ -49,12 +49,12 @@ const NewsPostTemplate: FC<Props> = ({ data, errors }) => {
       <Toolbar />
       <Box sx={{ py: 4 }}>
         <SEO title={post.title || ''} description={plainBody} image={post.ogImage?.publicUrl} />
-        <h1>{post.title}</h1>
+        <Typography variant={"h4"} component={'h1'}>{post.title}</Typography>
+        {post.createdAt && <Typography variant={"caption"}>Posted at {formatDate(post.createdAt, 'yyyy-MM-dd hh:mm')}</Typography>}
         <div>
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {renderRichText(post.body as RenderRichTextData<any>, richTextOptions)}
         </div>
-        {post.createdAt && <p>Posted at {formatDate(post.createdAt, 'yyyy-MM-dd hh:mm')}</p>}
       </Box>
     </Layout>
   );
