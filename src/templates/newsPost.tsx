@@ -49,8 +49,14 @@ const NewsPostTemplate: FC<Props> = ({ data, errors }) => {
       <Toolbar />
       <Box sx={{ py: 4 }}>
         <SEO title={post.title || ''} description={plainBody} image={post.ogImage?.publicUrl} />
-        <Typography variant={"h4"} component={'h1'}>{post.title}</Typography>
-        {post.createdAt && <Typography variant={"caption"}>Posted at {formatDate(post.createdAt, 'yyyy-MM-dd hh:mm')}</Typography>}
+        <Typography variant={'h4'} component={'h1'}>
+          {post.title}
+        </Typography>
+        {post.createdAt && (
+          <Typography variant={'caption'}>
+            Posted at {formatDate(post.createdAt, 'yyyy-MM-dd hh:mm')}
+          </Typography>
+        )}
         <div>
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {renderRichText(post.body as RenderRichTextData<any>, richTextOptions)}

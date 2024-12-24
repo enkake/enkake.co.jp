@@ -23,11 +23,16 @@ export const Component: FC = () => {
 
             return (
               <Box key={item.label} sx={{ mx: 1 }}>
-                <Button LinkComponent={isExternal ? 'a' : Link} href={item.href} sx={{ color: 'white' }} target={isExternal ? '_blank' : undefined}>
+                <Button
+                  LinkComponent={isExternal ? 'a' : Link}
+                  href={item.href}
+                  sx={{ color: 'white' }}
+                  target={isExternal ? '_blank' : undefined}
+                >
                   {item.label}
                 </Button>
               </Box>
-            )
+            );
           })}
         </Box>
         <Box sx={{ mt: 2 }}>&copy; {new Date().getFullYear()} enkake Inc.</Box>
